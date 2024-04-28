@@ -1,0 +1,8 @@
+worker-count = 2
+
+[db]
+host = "127.0.0.1"
+user = "root"
+password = "secret"
+name = "faers_db"
+port = 3306
