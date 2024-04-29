@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+misc/*.toml
+!misc/template/*.toml
+misc/*.txt
+misc/*.pdf
+
+bin/*
+!bin/dist/.gitkeep
