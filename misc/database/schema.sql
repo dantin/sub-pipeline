@@ -35,11 +35,11 @@ CREATE TABLE `drug` (
   `caseid`          INT          NOT NULL,
   `drug_seq`        INT          NOT NULL,
   `role_cod`        VARCHAR(16)  NULL,
-  `drugname`        VARCHAR(256) NULL,
+  `drugname`        VARCHAR(512) NULL,
   `prod_ai`         VARCHAR(512) NULL,
   `val_vbm`         INT          NOT NULL,
   `route`           VARCHAR(64)  NULL,
-  `dose_vbm`        VARCHAR(256) NULL,
+  `dose_vbm`        VARCHAR(512) NULL,
   `cum_dose_chr`    CHAR(16)     NOT NULL,
   `cum_dose_unit`   CHAR(8)      NULL,
   `dechal`          VARCHAR(16)  NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `drug` (
   `dose_amt`        VARCHAR(8)   NULL,
   `dose_unit`       VARCHAR(8)   NULL,
   `dose_form`       VARCHAR(64)  NULL,
-  `dose_freq`       VARCHAR(8)   NULL,
+  `dose_freq`       VARCHAR(16)  NULL,
 
   PRIMARY KEY (`primaryid`, `caseid`, `drug_seq`)
 );
