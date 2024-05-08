@@ -24,9 +24,7 @@ CREATE TABLE `demo` (
   `to_mfr`            VARCHAR(16)  NOT NULL,
   `occp_cod`          VARCHAR(64)  NOT NULL,
   `reporter_country`  CHAR(32)     NOT NULL,
-  `occr_country`      CHAR(16)     NOT NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`)
+  `occr_country`      CHAR(16)     NOT NULL
 );
 
 DROP TABLE IF EXISTS `drug`;
@@ -50,9 +48,7 @@ CREATE TABLE `drug` (
   `dose_amt`        VARCHAR(8)   NULL,
   `dose_unit`       VARCHAR(8)   NULL,
   `dose_form`       VARCHAR(64)  NULL,
-  `dose_freq`       VARCHAR(16)  NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `drug_seq`)
+  `dose_freq`       VARCHAR(16)  NULL
 );
 
 DROP TABLE IF EXISTS `indi`;
@@ -60,18 +56,14 @@ CREATE TABLE `indi` (
   `primaryid`       BIGINT       NOT NULL,
   `caseid`          INT          NOT NULL,
   `indi_drug_seq`   INT          NOT NULL,
-  `indi_pt`         VARCHAR(128) NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `indi_drug_seq`)
+  `indi_pt`         VARCHAR(128) NULL
 );
 
 DROP TABLE IF EXISTS `outc`;
 CREATE TABLE `outc` (
   `primaryid`       BIGINT       NOT NULL,
   `caseid`          INT          NOT NULL,
-  `outc_cod`        CHAR(8)      NOT NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `outc_cod`)
+  `outc_cod`        CHAR(8)      NOT NULL
 );
 
 DROP TABLE IF EXISTS `reac`;
@@ -79,18 +71,14 @@ CREATE TABLE `reac` (
   `primaryid`       BIGINT       NOT NULL,
   `caseid`          INT          NOT NULL,
   `pt`              VARCHAR(256) NOT NULL,
-  `drug_rec_act`    VARCHAR(64)  NOT NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `pt`, `drug_rec_act`)
+  `drug_rec_act`    VARCHAR(64)  NOT NULL
 );
 
 DROP TABLE IF EXISTS `rpsr`;
 CREATE TABLE `rpsr` (
   `primaryid`       BIGINT       NOT NULL,
   `caseid`          INT          NOT NULL,
-  `rpsr_cod`        CHAR(8)      NOT NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `rpsr_cod`)
+  `rpsr_cod`        CHAR(8)      NOT NULL
 );
 
 DROP TABLE IF EXISTS `ther`;
@@ -101,7 +89,5 @@ CREATE TABLE `ther` (
   `start_dt`        DATETIME(6)  NULL,
   `end_dt`          DATETIME(6)  NULL,
   `dur`             VARCHAR(8)   NULL,
-  `dur_cod`         CHAR(8)      NULL,
-
-  PRIMARY KEY (`primaryid`, `caseid`, `dsg_drug_seq`)
+  `dur_cod`         CHAR(8)      NULL
 );

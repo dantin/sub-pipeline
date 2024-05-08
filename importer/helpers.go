@@ -112,7 +112,7 @@ func (t *table) genDmlStmt(tokens []string) (*dmlStmt, error) {
 		values = append(values, val)
 	}
 	sql := fmt.Sprintf(
-		"REPLACE INTO `%s` (%s) VALUES (%s)",
+		"INSERT INTO `%s` (%s) VALUES (%s)",
 		t.name,
 		strings.Join(columns[:], ", "),
 		strings.Join(placeholders[:], ", "),
